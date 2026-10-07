@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react"
 import { TarotCard, Language } from "@/data/tarot"
 import { getCardContent } from "@/lib/tarot"
-import { CopyFateButton } from "./CopyFateButton"
+import { DownloadImageButton } from "./DownloadImageButton"
+import { ShareXButton } from "./ShareXButton"
 
 interface FateTextProps {
   card: TarotCard
@@ -155,8 +156,11 @@ export function FateText({ card, lang = "id", isActive = true, onReset }: FateTe
             {askAgainLabel}
           </button>
 
-          {/* Copy My Fate */}
-          <CopyFateButton card={card} lang={lang} />
+          {/* Download Tarot Result Image */}
+          <DownloadImageButton card={card} lang={lang} />
+
+          {/* Share on X (Twitter) */}
+          <ShareXButton card={card} lang={lang} />
         </div>
       </div>
     </div>
